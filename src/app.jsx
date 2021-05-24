@@ -3,15 +3,15 @@ import { Switch, Route } from 'react-router'
 console.log("App.jsx")
 
 export const App = ({isServer, ...props}) => {
-  const [state, setState ] = useState(0)
+  const [state, setState] = useState(0)
   return <div>
     <button onClick={() => setState(s => s+1)}>count to {state}</button>
     <Switch>
     <Route path="/other">
-      The other page! is here wowzzsssssssssss
+      The other page!
     </Route>
     <Route path="/">
-      Homes
+      Homes.
     </Route>
   </Switch>
   </div>
