@@ -14,3 +14,5 @@ visit `localhost:3000` or `localhost:3000/other`
 - [x] HMR
 - [ ] Production server / build
 - [ ] Emotion
+- [ ] Routing in snowpack
+- [ ] Snowpack plugin
