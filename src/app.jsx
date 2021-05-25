@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Switch, Route } from 'react-router'
+import { Switch, Route, Link } from 'react-router-dom'
 console.log("App.jsx")
 
 export const App = ({isServer, ...props}) => {
@@ -9,9 +9,11 @@ export const App = ({isServer, ...props}) => {
     <Switch>
     <Route path="/other">
       The other page!
+      <Link to="/">Go Home!</Link>
     </Route>
     <Route path="/">
-      Homes.
+      Homes
+      <Link to="/other">Go to other page</Link>
     </Route>
   </Switch>
   </div>

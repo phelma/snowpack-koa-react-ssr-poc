@@ -12,7 +12,8 @@ visit `localhost:3000` or `localhost:3000/other`
 - [x] SSR
 - [x] React router
 - [x] HMR
+- [x] Routing in snowpack
 - [ ] Production server / build
 - [ ] Emotion
-- [ ] Routing in snowpack
-- [ ] Snowpack plugin
+- [ ] EJS
+- [ ] as a Snowpack plugin?

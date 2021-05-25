@@ -10,14 +10,14 @@ const main = async () => {
 
   app.use(async (ctx, next) => {
     try {
-      const buildResult = await server.loadUrl(ctx.req.url)
+      const buildResult = await server.loadUrl(ctx.req.url, {isSsr: true})
       if (buildResult.contentType === 'text/html') {
         throw 'html'
       }
       ctx.type = buildResult.contentType
       ctx.body = buildResult.contents.toString()
     } catch (e) {
-      const defaultBuildResult = await server.loadUrl('/', {isSsr: true})
+      const buildResult = await server.loadUrl(ctx.req.url, {isSsr: true})
       const importedComponent = await runtime.importModule(
         '/dist/server-app.js'
       )
@@ -27,7 +27,7 @@ const main = async () => {
         React.createElement(ServerApp, {url: ctx.req.url})
       )
 
-      const document = defaultBuildResult.contents
+      const document = buildResult.contents
         .toString()
         .replace('<div id="app"></div>', appHtml)
         .replace(/src="\//g, 'src="http://localhost:3001/')
